@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function check() {
+            var name = document.getElementById("u_name").value.length;
+            var age = document.getElementById("u_age").value.length;
+
+            if(name==0 || age==0){
+                alert("빈칸이면 안됩니다.")
+                return false
+            }
+        }
+    </script>
+    <style>
+
+        ul {
+            list-style-type: none;
+
+        }
+
+        input{
+            line-height: 35px;
+            vertical-align: middle;
+        }
+
+        label {
+            font-size: 40px;
+            font-weight: bold;
+            padding-right: 20px;
+        }
+
+        btn {
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>서버로 데이터 보내기</h1>
+
+<form action="InputFormServlet" method="post" onsubmit="return check()">
+    <fieldset>
+        <legend>개인정보</legend>
+        <ul>
+            <li><label for="u_name">이름</label><input type="text" name="u_name" id="u_name"></li>
+            <li><label for="u_age">나이</label><input type="text" name="u_age" id="u_age"></li>
+            <li>
+                <label for="u_gender">성별</label>
+                <input type="radio" value="male" id="u_gender" name="u_gender">남
+                <input type="radio" value="female" name="u_gender">여
+            </li>
+        </ul>
+        <div style="text-align: center">
+            <input type="submit" value="전송" class="btn1"><!--폼태그 안에 있어야 함-->
+            <input type="reset" value="지우기" class="btn2">
+        </div>
+
+    </fieldset>
+</form>
+</body>
+</html>
